@@ -12,7 +12,7 @@ module.exports.listen = function(server) {
     });
 
     aliasdb.onAliasSet(function(data) {
-        socket.to(data.alias).emit('hit', data.url);
+        socket.to(data.alias).emit('alias-set', data.url);
     });
 
 };

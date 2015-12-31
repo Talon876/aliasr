@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     socket.on('connect', function() {
         socket.emit('register', alias);
     });
-    socket.on('hit', function(url) {
+    socket.on('alias-set', function(url) {
         window.location.reload();
     });
 });
