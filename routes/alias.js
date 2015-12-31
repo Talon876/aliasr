@@ -20,12 +20,17 @@ router.get('/:alias', function (req, res) {
 
 router.post('/:alias', function(req, res) {
     var alias = req.params['alias'];
-    aliasdb.saveImage(alias, req.body.url);
-    res.send('ok');
+    if(req.body.url) {
+        aliasdb.saveImage(alias, req.body.url);
+        res.setHeader('Location', req.originalUrl);
+        res.status(201).send(null);
+    } else {
+        res.status(400).send('Url cannot be empty string.');
+    }
 });
 
 router.get('/', function(req, res) {
-    res.send('Create an alias!');
+    res.redirect('/');
 });
 
 module.exports = router;
