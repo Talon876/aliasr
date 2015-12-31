@@ -14,6 +14,7 @@ app.set('io', io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.locals.pretty = app.get('env') === 'development';
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public

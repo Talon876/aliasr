@@ -1,6 +1,10 @@
 extends layout
 
 block content
-    h1= alias
-    p There is not an image available for alias '#{alias}'. You will be redirected as soon as one is available.
+    h1 Almost there!
+    p.
+        The image you have been linked to is still being uploaded.
+        You will be redirected to the image as soon as it finishes uploading.
+    p.
+        If your image does not appear soon, click #[a(href='') here] to reload.
     script(src='/javascripts/main.js')
