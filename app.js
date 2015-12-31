@@ -10,8 +10,7 @@ var routes = require('./routes/index');
 var alias = require('./routes/alias');
 
 var app = express();
-var io = require('socket.io');
-app.set('io', io);
+console.log('Running in ' + app.get('env') + ' environment.');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
