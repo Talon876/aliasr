@@ -81,4 +81,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+sslcert/*.crt
+sslcert/*.key
 

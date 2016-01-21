@@ -10,7 +10,7 @@ router.get('/:alias', function (req, res) {
             res.status(500).send('Something is broken! :(');
         } else {
             if(url === null) {
-                res.render('waiting', {alias: alias});
+                res.render('waiting', {alias: alias, title: alias});
             } else {
                 res.redirect(url);
             }
