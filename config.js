@@ -8,4 +8,8 @@ config.redis = {
     port: 6379
 };
 
+config.refresh = {
+    interval: 5000
+};
+
 module.exports = config;
