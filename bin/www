@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var config = require('../config');
+console.log('Using redis information: ' + config.redis.host + ':' + config.redis.port);
 var app = require('../app');
 var sockets = require('../routes/sockets');
 var debug = require('debug')('aliasrjs:server');

@@ -12,4 +12,11 @@ config.refresh = {
     interval: 5000
 };
 
-module.exports = config;
+var configFile = process.env.ALIASR_CONFIG;
+
+if (configFile) {
+    console.log('Loading config from ' + configFile);
+    module.exports = require('./' + configFile);
+} else {
+    module.exports = config;
+}
