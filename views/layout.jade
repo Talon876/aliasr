@@ -1,7 +1,36 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/cosmo.bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/site.css')
+        script(src='/javascripts/vendor/modernizr-2.6.2.js')
+    body
+        //todo: add analytic script here
+        div(class='navbar navbar-inverse navbar-fixed-top')
+            div(class='container')
+                div(class='navbar-header')
+                    button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse')
+                        span(class='icon-bar')
+                        span(class='icon-bar')
+                        span(class='icon-bar')
+                    a(href='/' class='navbar-brand') Aliasr
+                div(class='navbar-collapse collapse')
+                    ul(class='nav navbar-nav')
+                        li: a(href='/')
+                            span(class='glyphicon-list right-buffer glyphicon')
+                            span(class='hidden-sm') Home
+                        li: a(href='/stats')
+                            span(class='glyphicon-stats right-buffer glyphicon')
+                            span(class='hidden-sm') Stats
+                    if hasCount
+                        div(class='navbar-right navbar-text')
+                            | #{aliasCount} aliases have been created.
+        div(class='container body-content')
+            block content
+        script(src='/javascripts/vendor/jquery-1.10.2.min.js')
+        script(src='/javascripts/vendor/bootstrap.min.js')
+        script(src='/javascripts/vendor/respond.min.js')
+        block scripts

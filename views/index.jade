@@ -1,11 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  h3 The image upload pipelining tool!
-  p.
-    Integrating Aliasr in to your image sharing application allows your users to send
-    links to images before they are even finished uploading.
-  if hasCount
-      p.
-        #{aliasCount} aliases have been created so far.
+    div(class='row text-center')
+        div(class='col-lg-12')
+            div(class='page-header')
+                h1 About Aliasr
+                p(class='lead') Aliasr is an image upload pipelining tool for developers.
+    div(class='row')
+        div(class='col-sm-4')
+            h3 What
+            | Aliasr works like a url shortener, but with the ability to send the shortened link before a website is linked to it.
+        div(class='col-sm-4')
+            h3 Why
+            | Integrating Aliasr in to your image sharing application allows your users to send links to images before they are even finished uploading.
+        div(class='col-sm-4')
+            h3 How
+            | When you navigate to an Aliasr alias, your browser is redirected to the url associated with it. If there is no url associated yet, you will be shown a waiting page. As soon as the url is available, you will be redirected.
