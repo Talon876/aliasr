@@ -8,6 +8,7 @@ var refreshCount = function () {
     redis.keys('alias:*', function (err, aliases) {
         if (!err) {
             redis.set('alias.count', aliases.length);
+            ee.emit('counter.alias.count', aliases.length);
         }
     });
     setTimeout(refreshCount, config.refresh.interval || 60000);
@@ -25,6 +26,7 @@ var incrementCounter = function(counter) {
         if (!err) {
             var newSize = parseInt(size) + 1;
             redis.set(counter, newSize);
+            ee.emit('counter.' + counter, newSize);
         }
     });
 };
@@ -43,6 +45,9 @@ module.exports = {
     },
     onAliasSet: function (cb) {
         ee.on('alias-set', cb);
+    },
+    onAliasCountUpdate: function(cb) {
+        ee.on('counter.alias.count', cb);
     },
     size: function(callback) {
         getCounter('alias.count', callback);

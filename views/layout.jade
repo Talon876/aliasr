@@ -26,10 +26,11 @@ html
                             span(class='glyphicon-stats right-buffer glyphicon')
                             span(class='hidden-sm') Stats
                     if hasCount
-                        div(class='navbar-right navbar-text')
+                        div(id='aliasCountLabel' class='navbar-right navbar-text')
                             | #{aliasCount} aliases have been created.
         div(class='container body-content')
             block content
+        script(src='https://cdn.socket.io/socket.io-1.0.0.js')
         script(src='/javascripts/vendor/jquery-1.10.2.min.js')
         script(src='/javascripts/vendor/bootstrap.min.js')
         script(src='/javascripts/vendor/respond.min.js')
