@@ -5,23 +5,23 @@ var aliasdb = require('../aliasdb');
 router.get('/', function (req, res) {
     aliasdb.size(function (err, aliasCount) {
         if (err) {
-            res.render('index', {title: 'Aliasr', hasCount: false});
+            res.render('index', {title: 'Aliasr', hasCount: false, menu: 'home'});
         } else {
-            res.render('index', {title: 'Aliasr', aliasCount: aliasCount, hasCount: true});
+            res.render('index', {title: 'Aliasr', aliasCount: aliasCount, hasCount: true, menu: 'home'});
         }
     });
 });
 
-router.get('/about', function(req, res) {
+router.get('/about', function (req, res) {
     res.redirect('/');
 });
 
-router.get('/stats', function(req, res) {
+router.get('/stats', function (req, res) {
     aliasdb.size(function (err, aliasCount) {
         if (err) {
-            res.render('stats', {hasCount: false});
+            res.render('stats', {hasCount: false, menu: 'stats'});
         } else {
-            res.render('stats', {aliasCount: aliasCount, hasCount: true});
+            res.render('stats', {aliasCount: aliasCount, hasCount: true, menu: 'stats'});
         }
     });
 });

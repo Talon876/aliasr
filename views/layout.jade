@@ -19,10 +19,10 @@ html
                     a(href='/' class='navbar-brand') Aliasr
                 div(class='navbar-collapse collapse')
                     ul(class='nav navbar-nav')
-                        li: a(href='/')
+                        li(class='#{menu==="home" ? "active":""}'): a(href='/')
                             span(class='glyphicon-list right-buffer glyphicon')
                             span(class='hidden-sm') Home
-                        li: a(href='/stats')
+                        li(class='#{menu==="stats" ? "active":""}'): a(href='/stats')
                             span(class='glyphicon-stats right-buffer glyphicon')
                             span(class='hidden-sm') Stats
                     if hasCount
