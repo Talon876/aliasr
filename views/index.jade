@@ -16,6 +16,16 @@ block content
         div(class='col-sm-4')
             h3 How
             | When you navigate to an Aliasr alias, your browser is redirected to the url associated with it. If there is no url associated yet, you will be shown a waiting page. As soon as the url is available, you will be redirected.
+    div(class='row')
+        h3 Before the image is ready
+        p When someone opens an aliasr link to an image that has not finished uploading, they will be greeted with a loading page. As soon as your application informs aliasr of the image location, anyone viewing the loading page will be immediately redirected to the image.
+        a(href='images/fast-click.png')
+            img(src='images/fast-click.png', class='img-preview')
+    div(class='row')
+        h3 After the image is ready
+        p Once aliasr is aware of the image location, any future visits to the aliasr link will be immediately redirected to the image location.
+        a(href='images/slow-click.png')
+            img(src='images/slow-click.png', class='img-preview')
 
 block scripts
     script(src='/javascripts/livecount.js')
